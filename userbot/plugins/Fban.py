@@ -2,8 +2,12 @@
 # Copyright (C) 2020 KenHV
 
 from sqlalchemy.exc import IntegrityError
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP
+from var import Var
 from userbot.utils import admin_cmd, register
+
+
+bot = Var.FBAN_GROUP_ID
 
 @register(outgoing=True, disable_edited=True, pattern=r"^\.fban(?: |$)(.*)")
 async def fban(event):
