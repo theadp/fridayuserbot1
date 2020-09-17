@@ -7,7 +7,7 @@ from userbot.utils import admin_cmd
 
 bot = Config.FBAN_GROUP_ID
 
-@borg.on(admin_cmd(pattern=r"fban(?: |$)(.*)"))
+@register(outgoing=True, disable_edited=True, pattern=r"^\.fban(?: |$)(.*)")
 async def fban(event):
     """Bans a user from connected federations."""
     try:
@@ -75,7 +75,7 @@ async def fban(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"unfban(?: |$)(.*)"))
+@register(outgoing=True, disable_edited=True, pattern=r"^\.unfban(?: |$)(.*)")
 async def unfban(event):
     """Unbans a user from connected federations."""
     try:
@@ -141,7 +141,7 @@ async def unfban(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"fadd(?: |$)(.*)"))
+@register(outgoing=True, disable_edited=True, pattern=r"^\.fadd(?: |$)(.*)")
 async def addf(event):
     """Adds current chat to connected federations."""
     try:
@@ -161,7 +161,8 @@ async def addf(event):
 
     await event.edit("**Added this group to federations list!**")
 
-@borg.on(admin_cmd(pattern=r"fdel$"))
+
+@register(outgoing=True, disable_edited=True, pattern=r"^\.frm$")
 async def delf(event):
     """Removes current chat from connected federations."""
     try:
@@ -173,7 +174,7 @@ async def delf(event):
     await event.edit("**Removed this group from federations list!**")
 
 
-@borg.on(admin_cmd(pattern=r"flist$"))
+@register(outgoing=True, disable_edited=True, pattern=r"^\.flist$")
 async def listf(event):
     """List all connected federations."""
     try:
@@ -192,7 +193,7 @@ async def listf(event):
     await event.edit(msg)
 
 
-@borg.on(admin_cmd(pattern=r"fclear$"))
+@register(outgoing=True, disable_edited=True, pattern=r"^\.fclear$")
 async def delf(event):
     """Removes all chats from connected federations."""
     try:
