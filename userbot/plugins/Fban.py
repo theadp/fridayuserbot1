@@ -5,6 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
+bot = Config.FBAN_GROUP_ID
 
 @borg.on(admin_cmd(pattern=r"fban(?: |$)(.*)"))
 async def fban(event):
