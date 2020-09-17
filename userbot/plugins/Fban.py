@@ -3,7 +3,7 @@
 from sqlalchemy.exc import IntegrityError
 
 from userbot import CMD_HELP
-from userbot.utils import admin_d
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"fban(?: |$)(.*)"))
@@ -29,7 +29,7 @@ async def fban(event):
 
     if fban_id == self_user.id or fban_id == "@" + self_user.username:
         return await event.edit(
-            "**Error: This action has been prevented by KensurBot self preservation protocols.**"
+            "**Mad Or Wut? Fbanning Yourself ?"
         )
 
     if len((fed_list := get_flist())) == 0:
@@ -96,7 +96,7 @@ async def unfban(event):
     self_user = await event.client.get_me()
 
     if unfban_id == self_user.id or unfban_id == "@" + self_user.username:
-        return await event.edit("**Wait, that's illegal**")
+        return await event.edit("**Oh Really ? Ungban Urself ?**")
 
     if len((fed_list := get_flist())) == 0:
         return await event.edit("**You haven't connected any federations yet!**")
