@@ -43,6 +43,10 @@
       "description": "A Group ID Where You Want Logging Feature",
       "value": ""
     },
+    "FBAN_GROUP_ID": {
+      "description": "A Group ID Where You Want To Fban People",
+      "value": ""
+    },
     "STRING_SESSION": {
       "description": "Get From Repl.run Or Run Locally",
       "value": ""
